@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ThreadItem, { threadItemShape } from './ThreadItem';
+import ThreadItem from './ThreadItem';
+import { threadItemShape } from './shapes';
 
 // Tambahkan isLoading di parameter
 function ThreadList({ threads, authUser, upVote, downVote, neutralVote, isLoading }) {
