@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { commentItemShape } from './shapes';
 import { postedAt } from '../utils/formatter';
 
 function ThreadCommentItem({ id, content, createdAt, owner, upVotesBy, downVotesBy, authUser, upVote, downVote, neutralVote }) {
@@ -50,21 +51,6 @@ function ThreadCommentItem({ id, content, createdAt, owner, upVotesBy, downVotes
   );
 }
 
-const ownerShape = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-};
-
-const commentItemShape = {
-  id: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  owner: PropTypes.shape(ownerShape).isRequired,
-  upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-  downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
 ThreadCommentItem.propTypes = {
   ...commentItemShape,
   authUser: PropTypes.object,
@@ -80,6 +66,4 @@ ThreadCommentItem.defaultProps = {
   neutralVote: () => {},
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export { commentItemShape };
 export default ThreadCommentItem;

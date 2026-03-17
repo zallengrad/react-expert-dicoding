@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { threadItemShape } from './shapes';
 import { postedAt } from '../utils/formatter';
 
 function ThreadItem({ id, title, body, category, createdAt, upVotesBy, downVotesBy, totalComments, user, authUser, upVote, downVote, neutralVote }) {
@@ -66,24 +67,6 @@ function ThreadItem({ id, title, body, category, createdAt, upVotesBy, downVotes
   );
 }
 
-const userShape = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-};
-
-const threadItemShape = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-  downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-  totalComments: PropTypes.number.isRequired,
-  user: PropTypes.shape(userShape).isRequired,
-};
-
 ThreadItem.propTypes = {
   ...threadItemShape,
   authUser: PropTypes.object,
@@ -99,6 +82,4 @@ ThreadItem.defaultProps = {
   neutralVote: () => {},
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export { threadItemShape };
 export default ThreadItem;

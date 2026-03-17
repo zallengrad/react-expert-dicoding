@@ -25,6 +25,7 @@ function App() {
     dispatch(asyncUnsetAuthUser());
   };
 
+
   return (
     <>
       {/* LoadingBar dipindah ke luar kondisi isPreload agar selalu tampil */}
@@ -51,3 +52,5 @@ function App() {
 }
 
 export default App;
+
+// app.jsx
