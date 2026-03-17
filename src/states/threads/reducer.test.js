@@ -38,7 +38,7 @@ const fakeThread = {
 describe('threadsReducer function', () => {
   it('should return initial state (empty array) when given undefined state and unknown action', () => {
     const result = threadsReducer(undefined, { type: '@@INIT' });
-    expect(result).toEqual([1]); // SENGAJA DIRUSAK UNTUK SCREENSHOT 1_ci_check_error
+    expect(result).toEqual([]);
   });
 
   describe('RECEIVE_THREADS action', () => {
