@@ -48,7 +48,7 @@ describe('threadsReducer function', () => {
 
       const result = threadsReducer([], action);
 
-      expect(result).toEqual([{ ...threads[0], id: 'wrong-id' }]);
+      expect(result).toEqual(threads);
     });
   });
 
